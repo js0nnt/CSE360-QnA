@@ -37,9 +37,11 @@ public class SignupController
             return;
         }
 
-        UserStore.registerUser(username, password);
-        UserSession.setUsername(username);
-        Main.setRoot("home");
+        boolean isFirstUser = UserStore.isFirstUser();
+        String role = isFirstUser ? "admin" : "";
+        
+        UserStore.registerUser(username, password, role);
+        Main.setRoot("login");
     }
 
     @FXML
