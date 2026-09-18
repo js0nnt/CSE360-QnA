@@ -7,14 +7,17 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class Main extends Application
 {
     private static Scene scene;
 
     @Override
-    public void start(Stage stage) throws IOException
+    public void start(Stage stage) throws IOException, SQLException
     {
+        QuestionStore.initSchema();
+
         scene = new Scene(loadFxml("login"), 600, 400);
 
         stage.setTitle("QnA Mock");
