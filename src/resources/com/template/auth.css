@@ -1,0 +1,95 @@
+.auth-field {
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-border-color: #c3c8d6;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-font-family: "Arial";
+    -fx-font-size: 16px;
+    -fx-padding: 10px 14px;
+    -fx-pref-height: 48px;
+}
+
+.auth-field:focused {
+    -fx-border-color: #1489e8;
+    -fx-border-width: 2;
+}
+
+.form-title {
+    -fx-font-family: "Arial";
+    -fx-font-size: 27px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #142346;
+}
+
+.field-label {
+    -fx-font-family: "Arial";
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #142346;
+}
+
+.primary-button {
+    -fx-background-color: linear-gradient(to right, #1489e8, #3bcbda);
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+    -fx-font-family: "Arial";
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+    -fx-pref-height: 52px;
+    -fx-text-fill: white;
+}
+
+.primary-button:hover {
+    -fx-background-color: linear-gradient(to right, #0879d5, #22b8ca);
+}
+
+.link-button {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-font-family: "Arial";
+    -fx-font-size: 15px;
+    -fx-text-fill: #0879d5;
+    -fx-underline: true;
+}
+
+.muted-label {
+    -fx-font-family: "Arial";
+    -fx-font-size: 15px;
+    -fx-text-fill: #656f84;
+}
+
+.error-label {
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-text-fill: #b42b38;
+}
+
+.signup-root {
+    -fx-background-color: linear-gradient(to bottom right, #e5f2ff, #ffffff 58%, #d9eeff);
+}
+
+.signup-card {
+    -fx-background-color: white;
+    -fx-background-radius: 18;
+    -fx-effect: dropshadow(gaussian, rgba(20, 75, 135, 0.17), 24, 0, 0, 8);
+}
+
+.hero-title {
+    -fx-font-family: "Arial";
+    -fx-font-size: 48px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #142346;
+}
+
+.hero-copy {
+    -fx-font-family: "Arial";
+    -fx-font-size: 23px;
+    -fx-text-fill: #1859a6;
+}
+
+.hero-note {
+    -fx-font-family: "Arial";
+    -fx-font-size: 16px;
+    -fx-text-fill: #62728c;
+}

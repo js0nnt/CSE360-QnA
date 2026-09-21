@@ -18,7 +18,7 @@ public class Main extends Application
     {
         QuestionStore.initSchema();
 
-        scene = new Scene(loadFxml("login"), 600, 400);
+        scene = new Scene(loadFxml("login"), 1280, 708);
 
         stage.setTitle("QnA Mock");
         stage.setScene(scene);
