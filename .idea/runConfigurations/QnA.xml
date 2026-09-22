@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="QnA" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="com.template.Launcher" />
+    <module name="QnA Mock" />
+    <option name="VM_PARAMETERS" value="--enable-native-access=ALL-UNNAMED" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

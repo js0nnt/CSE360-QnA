@@ -1,9 +1,11 @@
 package com.template;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Window;
 
 import java.io.IOException;
 
@@ -31,20 +33,29 @@ public class SignupController
             errorLabel.setText("Passwords do not match.");
             return;
         }
-        if (UserStore.usernameExists(username))
+        String role;
+        try
         {
-            errorLabel.setText("That username is already taken.");
+            role = UserStore.registerUser(username, password);
+        }
+        catch (IllegalArgumentException exception)
+        {
+            errorLabel.setText(exception.getMessage());
             return;
         }
 
-        boolean isFirstUser = UserStore.isFirstUser();
-        String role = isFirstUser ? "admin" : "user";
-
-        UserStore.registerUser(username, password, role);
-        if (isFirstUser)
+        if ("admin".equals(role))
         {
+            Window owner = usernameField.getScene().getWindow();
             UserSession.start(username, role, true);
             Main.setRoot("admin");
+
+            Alert congratulations = new Alert(Alert.AlertType.INFORMATION);
+            congratulations.initOwner(owner);
+            congratulations.setTitle("Admin account");
+            congratulations.setHeaderText("Congratulations on becoming admin!");
+            congratulations.setContentText("You created the first account.");
+            congratulations.showAndWait();
         }
         else
         {

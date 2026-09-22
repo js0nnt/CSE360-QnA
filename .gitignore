@@ -31,4 +31,5 @@ bin/
 
 ### App data ###
 users.csv
+users.csv.lock
 *.db
