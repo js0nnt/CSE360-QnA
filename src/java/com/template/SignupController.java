@@ -38,10 +38,18 @@ public class SignupController
         }
 
         boolean isFirstUser = UserStore.isFirstUser();
-        String role = isFirstUser ? "admin" : "";
-        
+        String role = isFirstUser ? "admin" : "user";
+
         UserStore.registerUser(username, password, role);
-        Main.setRoot("login");
+        if (isFirstUser)
+        {
+            UserSession.start(username, role, true);
+            Main.setRoot("admin");
+        }
+        else
+        {
+            Main.setRoot("login");
+        }
     }
 
     @FXML

@@ -1,0 +1,62 @@
+.admin-root {
+    -fx-background-color: linear-gradient(to bottom right, #e5f2ff, #ffffff 58%, #d9eeff);
+}
+
+.brand {
+    -fx-font-family: "Arial";
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #142346;
+}
+
+.admin-card {
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+    -fx-effect: dropshadow(gaussian, rgba(20, 75, 135, 0.17), 24, 0, 0, 8);
+}
+
+.eyebrow {
+    -fx-background-color: #e8f4ff;
+    -fx-background-radius: 14;
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 7px 14px;
+    -fx-text-fill: #0879d5;
+}
+
+.admin-title {
+    -fx-font-family: "Arial";
+    -fx-font-size: 38px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #142346;
+}
+
+.admin-message {
+    -fx-font-family: "Arial";
+    -fx-font-size: 20px;
+    -fx-text-fill: #52627b;
+}
+
+.primary-button {
+    -fx-background-color: linear-gradient(to right, #1489e8, #3bcbda);
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+    -fx-font-family: "Arial";
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 14px 24px;
+    -fx-text-fill: white;
+}
+
+.secondary-button {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-border-color: #c3c8d6;
+    -fx-border-radius: 10;
+    -fx-cursor: hand;
+    -fx-font-family: "Arial";
+    -fx-font-size: 16px;
+    -fx-padding: 13px 24px;
+    -fx-text-fill: #142346;
+}

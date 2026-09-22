@@ -53,7 +53,7 @@ public class UserStore
 
         for (String line : Files.readAllLines(USERS_FILE, StandardCharsets.UTF_8))
         {
-            String[] parts = line.split(",");
+            String[] parts = line.split(",", -1);
             if (parts.length == 3 && parts[0].equals(username))
             {
                 return parts;

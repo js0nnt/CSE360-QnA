@@ -27,8 +27,8 @@ public class LoginController
 
         if (UserStore.verifyLogin(username, password))
         {
-            UserSession.setUsername(username);
-            Main.setRoot("home");
+            UserSession.start(username, UserStore.getRole(username), false);
+            Main.setRoot(UserSession.isAdmin() ? "admin" : "home");
         }
         else
         {
