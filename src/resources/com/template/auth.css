@@ -69,27 +69,91 @@
     -fx-background-color: linear-gradient(to bottom right, #e5f2ff, #ffffff 58%, #d9eeff);
 }
 
-.signup-card {
+/* Create Account form (PT's design) */
+.register-page {
+    -fx-effect: dropshadow(gaussian, rgba(20, 75, 135, 0.14), 28, 0, 0, 0);
+}
+
+.register-field,
+.register-phone-box {
     -fx-background-color: white;
-    -fx-background-radius: 18;
-    -fx-effect: dropshadow(gaussian, rgba(20, 75, 135, 0.17), 24, 0, 0, 8);
+    -fx-background-radius: 4;
+    -fx-border-color: #c3c8d6;
+    -fx-border-radius: 4;
+    -fx-border-width: 1;
 }
 
-.hero-title {
+.register-field:focused,
+.register-phone-box:focus-within {
+    -fx-border-color: #1489e8;
+}
+
+.register-field,
+.register-bare-field {
     -fx-font-family: "Arial";
-    -fx-font-size: 48px;
+    -fx-font-size: 11px;
+    -fx-text-fill: #282828;
+    -fx-prompt-text-fill: #9196aa;
+}
+
+.register-field {
+    -fx-padding: 0 10px;
+}
+
+.register-bare-field {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.register-combo {
+    -fx-padding: 0;
+}
+
+.register-combo .list-cell {
+    -fx-font-family: "Arial";
+    -fx-font-size: 11px;
+    -fx-text-fill: #0f2346;
+    -fx-padding: 0 0 0 10px;
+}
+
+.register-combo .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.country-code,
+.agreement-text {
+    -fx-font-family: "Arial";
+    -fx-font-size: 11px;
+    -fx-text-fill: #0f2346;
+}
+
+.rules-link,
+.rules-link:visited {
+    -fx-border-color: transparent;
+    -fx-font-family: "Arial";
+    -fx-font-size: 11px;
     -fx-font-weight: bold;
-    -fx-text-fill: #142346;
+    -fx-padding: 0;
+    -fx-text-fill: #147ee6;
+    -fx-underline: true;
 }
 
-.hero-copy {
+.register-button {
+    -fx-background-color: linear-gradient(to right, #1489e8, #3bcbda);
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
     -fx-font-family: "Arial";
-    -fx-font-size: 23px;
-    -fx-text-fill: #1859a6;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
 }
 
-.hero-note {
+.register-button:hover {
+    -fx-background-color: linear-gradient(to right, #0879d5, #22b8ca);
+}
+
+.register-error {
     -fx-font-family: "Arial";
-    -fx-font-size: 16px;
-    -fx-text-fill: #62728c;
+    -fx-font-size: 11px;
+    -fx-text-fill: #b42b38;
 }

@@ -31,7 +31,7 @@ public class HomeController
     @FXML
     private void openRules() throws IOException
     {
-        RulesController.open("home");
+        RulesController.open();
     }
 
     @FXML

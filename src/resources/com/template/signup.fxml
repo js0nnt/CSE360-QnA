@@ -1,43 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane prefHeight="708.0" prefWidth="1280.0" styleClass="signup-root"
-            stylesheets="@auth.css" xmlns="http://javafx.com/javafx/25"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.template.SignupController">
-    <VBox layoutX="110.0" layoutY="205.0" prefWidth="430.0" spacing="18.0">
-        <Label styleClass="hero-title" text="Create your Account" wrapText="true" />
-        <Label styleClass="hero-copy" text="Join Q&amp;A to ask questions and share answers."
-               wrapText="true" />
-        <Label styleClass="hero-note" text="You can sign in after creating your account." wrapText="true" />
-        <Button onAction="#openRules" style="-fx-padding: 0;" styleClass="link-button"
-                text="Read the community rules" />
-    </VBox>
-    <VBox layoutX="665.0" layoutY="75.0" prefWidth="485.0" spacing="10.0"
-          styleClass="signup-card">
-        <padding><Insets bottom="36.0" left="40.0" right="40.0" top="32.0" /></padding>
-        <Label styleClass="form-title" text="Create Account" />
-        <Label styleClass="field-label" text="Username" />
-        <TextField fx:id="usernameField" promptText="Create a username" styleClass="auth-field" />
-        <Label styleClass="field-label" text="Password" />
-        <PasswordField fx:id="passwordField" promptText="Create a password" styleClass="auth-field" />
-        <Label styleClass="field-label" text="Confirm Password" />
-        <PasswordField fx:id="confirmPasswordField" promptText="Re-enter your password"
-                       styleClass="auth-field" />
-        <Label fx:id="errorLabel" minHeight="30.0" styleClass="error-label" wrapText="true" />
-        <Button defaultButton="true" maxWidth="1.7976931348623157E308"
-                onAction="#handleSignup" styleClass="primary-button" text="REGISTER" />
-        <HBox alignment="CENTER" spacing="4.0">
-            <Label styleClass="muted-label" text="Already have an account?" />
-            <Button onAction="#goToLogin" styleClass="link-button" text="Log in" />
+<!-- PT's Create Account design: field labels are part of the background image, and each input
+     sits at PT's design coordinates scaled from 1212x1297 to 662x708. -->
+<StackPane prefHeight="708.0" prefWidth="1280.0" styleClass="signup-root"
+           stylesheets="@auth.css" xmlns="http://javafx.com/javafx/25"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.template.SignupController">
+    <Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="708.0" prefWidth="662.0"
+          styleClass="register-page">
+        <ImageView fitHeight="708.0" fitWidth="662.0" preserveRatio="false" smooth="true">
+            <image><Image url="@create-account-background.png" /></image>
+        </ImageView>
+
+        <TextField fx:id="firstNameField" layoutX="104.0" layoutY="112.0" prefHeight="29.0"
+                   prefWidth="221.0" promptText="Enter your first name" styleClass="register-field" />
+        <TextField fx:id="lastNameField" layoutX="340.0" layoutY="112.0" prefHeight="29.0"
+                   prefWidth="221.0" promptText="Enter your last name" styleClass="register-field" />
+        <TextField fx:id="emailField" layoutX="104.0" layoutY="175.0" prefHeight="29.0"
+                   prefWidth="457.0" promptText="Enter your email" styleClass="register-field" />
+        <TextField fx:id="usernameField" layoutX="104.0" layoutY="241.0" prefHeight="30.0"
+                   prefWidth="457.0" promptText="Create a username" styleClass="register-field" />
+
+        <Pane layoutX="104.0" layoutY="306.0" prefHeight="30.0" prefWidth="457.0"
+              styleClass="register-phone-box">
+            <Group layoutX="10.0" layoutY="9.0">
+                <Rectangle fill="WHITE" height="13.0" width="19.0" />
+                <Rectangle fill="#dc1e28" height="1.0" width="19.0" y="0.0" />
+                <Rectangle fill="#dc1e28" height="1.0" width="19.0" y="2.0" />
+                <Rectangle fill="#dc1e28" height="1.0" width="19.0" y="4.0" />
+                <Rectangle fill="#dc1e28" height="1.0" width="19.0" y="6.0" />
+                <Rectangle fill="#dc1e28" height="1.0" width="19.0" y="8.0" />
+                <Rectangle fill="#dc1e28" height="1.0" width="19.0" y="10.0" />
+                <Rectangle fill="#dc1e28" height="1.0" width="19.0" y="12.0" />
+                <Rectangle fill="#233c96" height="7.0" width="10.0" />
+            </Group>
+            <Label layoutX="32.0" layoutY="5.0" prefHeight="19.0" styleClass="country-code" text="+1" />
+            <TextField fx:id="phoneField" layoutX="50.0" layoutY="4.0" prefHeight="22.0"
+                       prefWidth="377.0" promptText="000 000 0000" styleClass="register-bare-field" />
+        </Pane>
+
+        <TextField fx:id="dateOfBirthField" layoutX="104.0" layoutY="371.0" prefHeight="30.0"
+                   prefWidth="220.0" promptText="DD.MM.YYYY" styleClass="register-field" />
+        <ComboBox fx:id="favoriteColorBox" layoutX="340.0" layoutY="371.0" prefHeight="30.0"
+                  prefWidth="221.0" promptText="Select your favorite color"
+                  styleClass="register-field, register-combo">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Blue" />
+                    <String fx:value="Red" />
+                    <String fx:value="Green" />
+                    <String fx:value="Purple" />
+                    <String fx:value="Orange" />
+                    <String fx:value="Yellow" />
+                    <String fx:value="Pink" />
+                    <String fx:value="Black" />
+                    <String fx:value="White" />
+                </FXCollections>
+            </items>
+        </ComboBox>
+
+        <PasswordField fx:id="passwordField" layoutX="104.0" layoutY="436.0" prefHeight="29.0"
+                       prefWidth="457.0" promptText="Create a password" styleClass="register-field" />
+        <PasswordField fx:id="confirmPasswordField" layoutX="104.0" layoutY="518.0" prefHeight="31.0"
+                       prefWidth="457.0" promptText="Re-enter your password" styleClass="register-field" />
+
+        <CheckBox fx:id="agreementBox" layoutX="104.0" layoutY="564.0" styleClass="agreement-box" />
+        <HBox alignment="CENTER_LEFT" layoutX="126.0" layoutY="562.0" prefHeight="22.0" prefWidth="435.0">
+            <Label styleClass="agreement-text" text="I agree to the " />
+            <Hyperlink onAction="#openRules" styleClass="rules-link" text="rules and conditions" />
+            <Label styleClass="agreement-text" text=" and acknowledge the privacy policy." />
         </HBox>
-    </VBox>
-</AnchorPane>
+
+        <Button defaultButton="true" layoutX="234.0" layoutY="595.0" onAction="#handleSignup"
+                prefHeight="32.0" prefWidth="195.0" styleClass="register-button" text="Register" />
+
+        <Label fx:id="errorLabel" alignment="CENTER" layoutX="104.0" layoutY="633.0"
+               prefWidth="457.0" styleClass="register-error" textAlignment="CENTER" wrapText="true" />
+        <HBox alignment="CENTER" layoutX="104.0" layoutY="655.0" prefWidth="457.0">
+            <Label styleClass="agreement-text" text="Already have an account? " />
+            <Hyperlink onAction="#goToLogin" styleClass="rules-link" text="Log in" />
+        </HBox>
+    </Pane>
+</StackPane>

@@ -30,6 +30,16 @@ public class Main extends Application
         scene.setRoot(loadFxml(fxmlFile));
     }
 
+    public static Parent getRoot()
+    {
+        return scene.getRoot();
+    }
+
+    public static void setRoot(Parent root)
+    {
+        scene.setRoot(root);
+    }
+
     private static Parent loadFxml(String fxmlFile) throws IOException
     {
         FXMLLoader loader = new FXMLLoader(Main.class.getResource(fxmlFile + ".fxml"));

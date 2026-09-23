@@ -1,22 +1,24 @@
 package com.template;
 
 import javafx.fxml.FXML;
+import javafx.scene.Parent;
 
 import java.io.IOException;
 
 public class RulesController
 {
-    private static String returnPage = "login";
+    private static Parent returnRoot;
 
-    public static void open(String fromPage) throws IOException
+    public static void open() throws IOException
     {
-        returnPage = fromPage;
+        // Keep the current screen itself so going back does not clear a half-filled form.
+        returnRoot = Main.getRoot();
         Main.setRoot("rules");
     }
 
     @FXML
-    private void goBack() throws IOException
+    private void goBack()
     {
-        Main.setRoot(returnPage);
+        Main.setRoot(returnRoot);
     }
 }
