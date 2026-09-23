@@ -1,11 +1,9 @@
 package com.template;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Window;
 
 import java.io.IOException;
 
@@ -44,23 +42,13 @@ public class SignupController
             return;
         }
 
-        if ("admin".equals(role))
-        {
-            Window owner = usernameField.getScene().getWindow();
-            UserSession.start(username, role, true);
-            Main.setRoot("admin");
+        Main.setRoot("admin".equals(role) ? "congratulations" : "login");
+    }
 
-            Alert congratulations = new Alert(Alert.AlertType.INFORMATION);
-            congratulations.initOwner(owner);
-            congratulations.setTitle("Admin account");
-            congratulations.setHeaderText("Congratulations on becoming admin!");
-            congratulations.setContentText("You created the first account.");
-            congratulations.showAndWait();
-        }
-        else
-        {
-            Main.setRoot("login");
-        }
+    @FXML
+    private void openRules() throws IOException
+    {
+        RulesController.open("signup");
     }
 
     @FXML

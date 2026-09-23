@@ -18,17 +18,8 @@ public class AdminController
             throw new IllegalStateException("The admin page requires an admin session.");
         }
 
-        String username = UserSession.getUsername();
-        if (UserSession.consumeAdminCongratulations())
-        {
-            titleLabel.setText("Congratulations, " + username + "!");
-            messageLabel.setText("You created the first account, so you are now the admin of Q&A.");
-        }
-        else
-        {
-            titleLabel.setText("Welcome back, " + username + "!");
-            messageLabel.setText("You are signed in to your admin account.");
-        }
+        titleLabel.setText("Welcome back, " + UserSession.getUsername() + "!");
+        messageLabel.setText("You are signed in to your admin account.");
     }
 
     @FXML

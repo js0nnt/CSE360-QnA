@@ -29,6 +29,12 @@ public class HomeController
     }
 
     @FXML
+    private void openRules() throws IOException
+    {
+        RulesController.open("home");
+    }
+
+    @FXML
     private void handleLogout() throws IOException
     {
         UserSession.clear();

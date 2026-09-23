@@ -12,5 +12,6 @@
     </padding>
     <Label fx:id="welcomeLabel" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
     <Button fx:id="adminButton" onAction="#openAdminPage" text="Admin Page" />
+    <Button onAction="#openRules" text="Rules" />
     <Button onAction="#handleLogout" text="Log Out" />
 </VBox>

@@ -18,6 +18,8 @@
         <Label styleClass="hero-copy" text="Join Q&amp;A to ask questions and share answers."
                wrapText="true" />
         <Label styleClass="hero-note" text="You can sign in after creating your account." wrapText="true" />
+        <Button onAction="#openRules" style="-fx-padding: 0;" styleClass="link-button"
+                text="Read the community rules" />
     </VBox>
     <VBox layoutX="665.0" layoutY="75.0" prefWidth="485.0" spacing="10.0"
           styleClass="signup-card">

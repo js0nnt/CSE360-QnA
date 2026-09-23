@@ -4,13 +4,11 @@ public class UserSession
 {
     private static String username;
     private static String role;
-    private static boolean newAdmin;
 
-    public static void start(String name, String accountRole, boolean firstAdminSignup)
+    public static void start(String name, String accountRole)
     {
         username = name;
         role = accountRole;
-        newAdmin = firstAdminSignup;
     }
 
     public static String getUsername()
@@ -23,17 +21,9 @@ public class UserSession
         return username != null && "admin".equals(role);
     }
 
-    public static boolean consumeAdminCongratulations()
-    {
-        boolean showCongratulations = newAdmin;
-        newAdmin = false;
-        return showCongratulations;
-    }
-
     public static void clear()
     {
         username = null;
         role = null;
-        newAdmin = false;
     }
 }
