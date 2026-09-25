@@ -35,6 +35,11 @@ public class LoginController
             errorLabel.setText("Incorrect username or password.");
         }
     }
+    @FXML
+    private void handleForgottenPW() throws IOException
+    {
+    	System.out.println("TBA - this should do something in the future!");
+    }
 
     @FXML
     private void goToSignup() throws IOException
