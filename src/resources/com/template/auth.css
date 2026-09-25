@@ -157,3 +157,22 @@
     -fx-font-size: 11px;
     -fx-text-fill: #b42b38;
 }
+
+.remember-checkbox {
+    -fx-font-family: "Arial";
+    -fx-font-size: 16px;
+    -fx-text-fill: #323232;
+}
+
+.fpw-button {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-font-family: "Arial";
+    -fx-font-size: 16px;
+    -fx-text-fill: #0879e7;
+    -fx-underline: false;
+}
+
+.fpw-button:hover {
+    -fx-text-fill: #147ee6;
+}
